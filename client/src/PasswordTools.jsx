@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./PasswordTools.css";
 
-const API = "http://localhost:4000/api/auth";
+const API = `${import.meta.env.VITE_API_URL || "http://localhost:4000/api"}/auth`;
 
 const strong = (s) =>
   typeof s === "string" &&

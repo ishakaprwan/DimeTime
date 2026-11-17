@@ -1,7 +1,7 @@
 import { useCurrency } from "../currency";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-const API_URL = "http://localhost:4000/api";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:4000/api";
 
 // budget page for setting monthly limits + spending; spendng against each category
 function Budget({ onBack }) {
