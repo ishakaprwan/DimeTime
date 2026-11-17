@@ -91,6 +91,7 @@
   font-size: 12px;
   cursor: pointer;
   color: #1b2739;
+  text-align: left;
 }
 
 .dt-ai-panel form {
@@ -136,7 +137,6 @@
   padding: 0 12px;
 }
 
-/* sage + cream colours to match the rest of DimeTime */
 .dt-ai-launch {
   background: #697760;
   color: #fffdfa;
@@ -205,7 +205,6 @@
   background: #4c5d47;
 }
 
-/* dark mode */
 :root[data-dt-theme="dark"] .dt-ai-panel {
   background: #303a30;
   color: #edf0e7;
@@ -272,7 +271,6 @@
   min-height: 44px;
 }
 
-/* page shortcuts in assistant replies */
 .dt-ai-msg .dt-ai-nav-button {
   display: block;
   width: fit-content;
@@ -302,7 +300,6 @@
   background: #e8e6df;
 }
 
-/* keeping conversation messages spaced apart */
 .dt-ai-messages {
   display: flex;
   flex-direction: column;
@@ -333,7 +330,6 @@
   margin-top: 12px;
 }
 
-/* keeping the initial view compact while allowing longer conversations to scroll */
 .dt-ai-panel {
   height: auto;
   max-height: min(560px, calc(100dvh - 130px));
@@ -354,4 +350,36 @@
 .dt-ai-suggestions {
   padding-top: 4px;
   padding-bottom: 12px;
+}
+
+@media (max-width: 620px) {
+  .dt-ai {
+    right: 12px;
+    bottom: max(12px, env(safe-area-inset-bottom));
+  }
+
+  .dt-ai .dt-ai-panel {
+    position: fixed;
+    box-sizing: border-box;
+    left: auto;
+    right: 12px;
+    bottom: calc(62px + env(safe-area-inset-bottom));
+    width: min(390px, calc(100vw - 24px));
+    max-width: calc(100vw - 24px);
+    height: auto;
+    max-height: min(560px, calc(100dvh - 92px));
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .dt-ai .dt-ai-messages {
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .dt-ai .dt-ai-panel form {
+    min-width: 0;
+    flex-shrink: 0;
+  }
 }
