@@ -1,0 +1,16 @@
+# dependencies + build output
+node_modules/
+dist/
+coverage/
+
+# environment variables + secrets
+.env
+.env.*
+!.env.example
+
+# logs
+*.log
+
+# coursework files not required by the app
+imp.txt
+client/src/assets/Dissertation Assessment Brief (Feb 2026).pdf

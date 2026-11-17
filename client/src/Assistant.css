@@ -1,0 +1,357 @@
+.dt-ai {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+  font-family: inherit;
+}
+
+.dt-ai-launch {
+  border: 0;
+  border-radius: 999px;
+  background: #203d68;
+  color: white;
+  padding: 13px 20px;
+  cursor: pointer;
+  box-shadow: 0 5px 22px #0003;
+  font-weight: 700;
+}
+
+.dt-ai-panel {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  width: min(390px, calc(100vw - 32px));
+  height: min(560px, calc(100vh - 130px));
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: #1b2739;
+  border: 1px solid #cbd5e1;
+  border-radius: 18px;
+  box-shadow: 0 15px 45px #0003;
+  overflow: hidden;
+}
+
+.dt-ai-panel header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 17px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.dt-ai-panel header span {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.dt-ai-messages {
+  flex: 1;
+  overflow: auto;
+  padding: 14px;
+}
+
+.dt-ai-messages > p:first-child {
+  line-height: 1.5;
+}
+
+.dt-ai-msg {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-width: 94%;
+  padding: 11px 12px;
+  border-radius: 12px;
+  line-height: 1.45;
+  font-size: 14px;
+}
+
+.dt-ai-msg.user {
+  background: #dbeafe;
+  margin-left: auto;
+}
+
+.dt-ai-msg.assistant {
+  background: #f1f5f9;
+  margin-right: auto;
+}
+
+.dt-ai-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px 12px;
+}
+
+.dt-ai-suggestions button {
+  border: 1px solid #cbd5e1;
+  border-radius: 16px;
+  background: white;
+  padding: 7px 9px;
+  font-size: 12px;
+  cursor: pointer;
+  color: #1b2739;
+}
+
+.dt-ai-panel form {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.dt-ai-panel input {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  padding: 10px;
+  background: white;
+  color: #1b2739;
+}
+
+.dt-ai-panel form button {
+  border: 0;
+  border-radius: 9px;
+  background: #203d68;
+  color: white;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+.dt-ai-panel button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.dt-ai-panel small {
+  padding: 0 12px 12px;
+  color: #64748b;
+  line-height: 1.35;
+}
+
+.dt-ai-error {
+  color: #b91c1c;
+  font-size: 13px;
+  padding: 0 12px;
+}
+
+/* sage + cream colours to match the rest of DimeTime */
+.dt-ai-launch {
+  background: #697760;
+  color: #fffdfa;
+  box-shadow: 0 6px 22px rgba(52, 65, 47, 0.18);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.dt-ai-launch:hover {
+  background: #4c5d47;
+}
+
+.dt-ai-launch:focus-visible,
+.dt-ai-panel button:focus-visible {
+  outline: 2px solid #697760;
+  outline-offset: 3px;
+}
+
+.dt-ai-panel {
+  background: #fffdfa;
+  color: #282b26;
+  border-color: #e8e4dc;
+  box-shadow: 0 14px 45px rgba(48, 48, 38, 0.15);
+}
+
+.dt-ai-panel header,
+.dt-ai-panel form {
+  border-color: #e8e4dc;
+}
+
+.dt-ai-panel header span,
+.dt-ai-panel small {
+  color: #777a71;
+}
+
+.dt-ai-msg.user {
+  background: #e9ece5;
+}
+
+.dt-ai-msg.assistant {
+  background: #f2efe9;
+}
+
+.dt-ai-suggestions button {
+  border-color: #d9dbd2;
+  color: #4c5d47;
+  background: #fffdfa;
+}
+
+.dt-ai-suggestions button:hover {
+  background: #e9ece5;
+}
+
+.dt-ai-panel input {
+  background: #fffdfa;
+  color: #282b26;
+  border-color: #d9dbd2;
+}
+
+.dt-ai-panel form button {
+  background: #697760;
+  color: #fffdfa;
+}
+
+.dt-ai-panel form button:not(:disabled):hover {
+  background: #4c5d47;
+}
+
+/* dark mode */
+:root[data-dt-theme="dark"] .dt-ai-panel {
+  background: #303a30;
+  color: #edf0e7;
+  border-color: #71856d;
+}
+
+:root[data-dt-theme="dark"] .dt-ai-panel header,
+:root[data-dt-theme="dark"] .dt-ai-panel form {
+  border-color: #536452;
+}
+
+:root[data-dt-theme="dark"] .dt-ai-panel header span,
+:root[data-dt-theme="dark"] .dt-ai-panel small {
+  color: #c4d2c1;
+}
+
+:root[data-dt-theme="dark"] .dt-ai-msg.assistant {
+  background: #354235;
+  color: #edf0e7;
+}
+
+:root[data-dt-theme="dark"] .dt-ai-msg.user {
+  background: #465b47;
+  color: #fff;
+}
+
+:root[data-dt-theme="dark"] .dt-ai-suggestions button {
+  background: #354235;
+  color: #edf0e7;
+  border-color: #71856d;
+}
+
+:root[data-dt-theme="dark"] .dt-ai-panel input {
+  background: #263126;
+  color: #edf0e7;
+  border-color: #71856d;
+}
+
+:root[data-dt-theme="dark"] .dt-ai-panel form button,
+:root[data-dt-theme="dark"] .dt-ai-launch {
+  background: #526b50;
+  color: #fff;
+}
+
+:root[data-dt-theme="dark"] .dt-ai-error {
+  color: #ffc1b2;
+}
+
+.dt-ai :is(button, input):focus-visible {
+  outline: 3px solid #34543d;
+  outline-offset: 3px;
+}
+
+:root[data-dt-theme="dark"] .dt-ai :is(button, input):focus-visible {
+  outline-color: #a9c998;
+}
+
+:root:not([data-dt-theme="dark"]) .dt-ai-panel header span,
+:root:not([data-dt-theme="dark"]) .dt-ai-panel small {
+  color: #656b62;
+}
+
+.dt-ai-suggestions button {
+  min-height: 44px;
+}
+
+/* page shortcuts in assistant replies */
+.dt-ai-msg .dt-ai-nav-button {
+  display: block;
+  width: fit-content;
+  min-height: 44px;
+  margin-top: 10px;
+  padding: 9px 14px;
+  border: 1px solid #697760;
+  border-radius: 9px;
+  background: #f6f3ee;
+  color: #26382a;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.dt-ai-msg .dt-ai-nav-button:hover {
+  background: #e8e6df;
+}
+
+:root[data-dt-theme="dark"] .dt-ai-msg .dt-ai-nav-button {
+  background: #f6f3ee;
+  color: #26382a;
+  border-color: #bac7b5;
+}
+
+:root[data-dt-theme="dark"] .dt-ai-msg .dt-ai-nav-button:hover {
+  background: #e8e6df;
+}
+
+/* keeping conversation messages spaced apart */
+.dt-ai-messages {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.dt-ai-msg {
+  flex: 0 0 auto;
+  min-height: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.dt-ai-msg.user {
+  align-self: flex-end;
+}
+
+.dt-ai-msg.assistant {
+  align-self: flex-start;
+}
+
+.dt-ai-msg > span {
+  display: block;
+}
+
+.dt-ai-msg .dt-ai-nav-button {
+  margin-top: 12px;
+}
+
+/* keeping the initial view compact while allowing longer conversations to scroll */
+.dt-ai-panel {
+  height: auto;
+  max-height: min(560px, calc(100dvh - 130px));
+}
+
+.dt-ai-messages {
+  min-height: 0;
+}
+
+.dt-ai-messages-empty {
+  flex: 0 0 auto;
+}
+
+.dt-ai-messages-empty > p {
+  margin: 0;
+}
+
+.dt-ai-suggestions {
+  padding-top: 4px;
+  padding-bottom: 12px;
+}
